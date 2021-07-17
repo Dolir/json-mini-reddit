@@ -1,0 +1,76 @@
+.postImage {
+  width: 500px;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+.postBox h2 {
+  width: 500px;
+  text-align: start;
+  margin-left: 5px;
+  margin-top: 0;
+}
+.subreddit {
+  margin: 5px 0 0 10px;
+
+  opacity: 0.5;
+  font-weight: bold;
+  display: flex;
+}
+.subreddit-box {
+  display: flex;
+}
+.postBox {
+  cursor: pointer;
+  margin-top: 20px;
+  padding-right: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+
+  box-shadow: 0 0.6px 2.2px rgba(0, 0, 0, 0.022),
+    0 1.3px 5.3px rgba(0, 0, 0, 0.031), 0 2.5px 10px rgba(0, 0, 0, 0.037),
+    0 4.5px 17.9px rgba(0, 0, 0, 0.043), 0 8.4px 33.4px rgba(0, 0, 0, 0.051),
+    0 20px 80px rgba(0, 0, 0, 0.07);
+}
+.upvote {
+  width: 20px;
+  margin-top: 15px;
+}
+.votes {
+  margin: 0;
+}
+.downvote {
+  margin-top: 10px;
+  width: 20px;
+  transform: rotateX(180deg);
+}
+.VotesSection {
+  color: gray;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.bottom-main {
+  border-top: 1px rgb(207, 207, 207) solid;
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.bottom-main p span {
+  color: orangered;
+}
+.comments {
+  display: flex;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.comments img {
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
+}
+.spoiler {
+  filter: blur(10px);
+}
