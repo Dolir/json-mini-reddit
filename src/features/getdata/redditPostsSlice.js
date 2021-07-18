@@ -13,6 +13,17 @@ const initialState = {
 export const fetchPosts = createAsyncThunk(
   "posts/fetchPosts",
   async (searchTerm) => {
+    if (searchTerm) {
+      const response = await fetch(
+        `https://www.reddit.com/search.json?q=${searchTerm}`
+      );
+
+      const data = response.json();
+      console.log(data);
+      // The value we return becomes the `fulfilled` action payload
+      return data;
+    }
+
     const response = await fetch("https://www.reddit.com/r/popular.json");
 
     const data = response.json();
@@ -23,7 +34,7 @@ export const fetchPosts = createAsyncThunk(
 );
 
 export const redditPostsSlice = createSlice({
-  name: "counter",
+  name: "posts",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -63,6 +74,7 @@ export const redditPostsSlice = createSlice({
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectPosts = (state) => state.posts;
+export const selectStatus = (state) => state.status;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.

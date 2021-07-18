@@ -1,18 +1,42 @@
-.header {
+.searchBar {
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
     0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
     0 100px 80px rgba(0, 0, 0, 0.07);
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   right: 0;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   z-index: 2;
 }
+
 .logo {
   display: inline-flex;
+  margin-right: 20px;
   width: 30px;
+  padding-left: 110px;
+}
+.forma {
+  display: flex;
+  margin-right: 15px;
+  height: 50px;
+  align-items: center;
+}
+.forma input {
+  width: 45px;
+  height: 25px;
+  border-radius: 10px;
+  transition-duration: 100ms;
+  transition-delay: 10s;
+  text-decoration: none;
+  outline: none;
+}
+
+.forma input:hover {
+  width: 200px;
+  transition-duration: 100ms;
+  transition-delay: 100ms;
 }

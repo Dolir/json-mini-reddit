@@ -3,26 +3,42 @@ import "../styles/post.css";
 import logo from "../imgs/arrowUp.svg";
 import commentsIcon from "../imgs/commentsIcon.png";
 import classNames from "classnames";
+
 function Post({ data }) {
   function kFormatter(num) {
     return Math.abs(num) > 999
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
       : Math.sign(num) * Math.abs(num);
   }
-  console.log(data);
+
   function MediaPicker() {
     if (data.is_video) {
       return (
-        <video width="500" controls autoplay>
+        <video width="500" controls preload className="postVideo">
           <source src={data.media.reddit_video.fallback_url} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       );
     } else if (data.is_self) {
       return;
+    } else if (data.media === Object) {
+      return data.media.embed;
     } else {
+      const imageFormats = ["jpg", "png"];
+      const result = imageFormats.some((el) => data.url.includes(el));
+      if (!result) {
+        return (
+          <a href={data.url} className="sourceLink">
+            {data.url
+              .toString()
+              .slice(0, 40)
+              .replace(/(^\w+:|^)\/\//, "")}
+          </a>
+        );
+      }
       return (
         <img
+          alt="post"
           src={data.url}
           className={classNames("postImage", { spoiler: data.spoiler })}
           id="spoiled"
@@ -49,16 +65,16 @@ function Post({ data }) {
       })}`;
     }
   }
+
   return (
     <div className="postBox">
       <div className="VotesSection">
-        <img src={logo} className="upvote" />
+        <img src={logo} className="upvote" alt="upvote" />
         <p className="votes">{kFormatter(data.ups)}</p>
-        <img src={logo} className="downvote" />
+        <img src={logo} className="downvote" alt="downvote" />
       </div>
       <div>
         <div className="subreddit-box">
-          <img src />
           <p className="subreddit">r/{data.subreddit}</p>
         </div>
 
@@ -71,7 +87,7 @@ function Post({ data }) {
           <p>{dateCheck()}</p>
 
           <div className="comments">
-            <img src={commentsIcon} />
+            <img src={commentsIcon} alt="comments" />
             <span>{kFormatter(data.num_comments)}</span>
           </div>
         </div>
