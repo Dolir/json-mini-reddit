@@ -93,3 +93,12 @@
 .sourceLink::after {
   content: "...";
 }
+.link {
+  display: flex;
+  text-decoration: none;
+  color: gray;
+}
+.noFlexlink {
+  text-decoration: none;
+  color: black;
+}

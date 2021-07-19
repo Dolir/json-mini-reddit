@@ -1,6 +1,10 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
+import { selectDarkMode } from "../features/darkmode/darkmode";
+import { useSelector } from "react-redux";
 function LoadingBlock({ messageType }) {
+  const darkmode = useSelector(selectDarkMode);
+
   if (messageType) {
     return (
       <div className="postBox">
@@ -9,8 +13,8 @@ function LoadingBlock({ messageType }) {
           width={570}
           height={180}
           viewBox="0 0 570 180"
-          backgroundColor="#f3f3f3"
-          foregroundColor="#ecebeb"
+          backgroundColor={darkmode.darkmode ? "#252525" : "#f3f3f3"}
+          foregroundColor={darkmode.darkmode ? "#ACACAC" : "#ecebeb"}
         >
           <rect x="11" y="31" rx="5" ry="5" width="59" height="30" />
           <rect x="94" y="10" rx="5" ry="5" width="83" height="12" />
@@ -29,8 +33,8 @@ function LoadingBlock({ messageType }) {
         width={570}
         height={500}
         viewBox="0 0 570 500"
-        backgroundColor="#f3f3f3"
-        foregroundColor="#ecebeb"
+        backgroundColor={darkmode.darkmode ? "#252525" : "#f3f3f3"}
+        foregroundColor={darkmode.darkmode ? "#ACACAC" : "#ecebeb"}
       >
         <rect x="11" y="31" rx="5" ry="5" width="59" height="30" />
         <rect x="94" y="10" rx="5" ry="5" width="83" height="12" />

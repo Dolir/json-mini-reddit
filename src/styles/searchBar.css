@@ -12,7 +12,6 @@
   background-color: rgb(255, 255, 255);
   z-index: 2;
 }
-
 .logo {
   display: inline-flex;
   margin-right: 20px;
@@ -26,17 +25,18 @@
   align-items: center;
 }
 .forma input {
-  width: 45px;
+  width: 100px;
   height: 25px;
   border-radius: 10px;
   transition-duration: 100ms;
-  transition-delay: 10s;
   text-decoration: none;
   outline: none;
+  box-shadow: 0 0 0 1pt grey;
+  border: 0;
+
+  background-color: rgb(233, 233, 233);
 }
 
-.forma input:hover {
-  width: 200px;
-  transition-duration: 100ms;
-  transition-delay: 100ms;
+.clicked {
+  width: 200px !important;
 }

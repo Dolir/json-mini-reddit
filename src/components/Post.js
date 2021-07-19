@@ -3,7 +3,7 @@ import "../styles/post.css";
 import logo from "../imgs/arrowUp.svg";
 import commentsIcon from "../imgs/commentsIcon.png";
 import classNames from "classnames";
-
+import { useParams, Link, Redirect } from "react-router-dom";
 function Post({ data }) {
   function kFormatter(num) {
     return Math.abs(num) > 999
@@ -65,34 +65,39 @@ function Post({ data }) {
       })}`;
     }
   }
-
+  console.log(data);
   return (
-    <div className="postBox">
-      <div className="VotesSection">
-        <img src={logo} className="upvote" alt="upvote" />
-        <p className="votes">{kFormatter(data.ups)}</p>
-        <img src={logo} className="downvote" alt="downvote" />
-      </div>
-      <div>
-        <div className="subreddit-box">
-          <p className="subreddit">r/{data.subreddit}</p>
+    <Link
+      to={`/posts/${data.id}/${data.title.replace(/\s/g, "_")}`}
+      className="noFlexlink"
+    >
+      <div className="postBox">
+        <div className="VotesSection">
+          <img src={logo} className="upvote" alt="upvote" />
+          <p className="votes">{kFormatter(data.ups)}</p>
+          <img src={logo} className="downvote" alt="downvote" />
         </div>
+        <div>
+          <div className="subreddit-box">
+            <p className="subreddit">r/{data.subreddit}</p>
+          </div>
 
-        <h2>{data.title}</h2>
-        {MediaPicker()}
-        <div className="bottom-main">
-          <p>
-            Posted by <span>{data.author}</span>
-          </p>
-          <p>{dateCheck()}</p>
+          <h2>{data.title}</h2>
+          {MediaPicker()}
+          <div className="bottom-main">
+            <p>
+              Posted by <span>{data.author}</span>
+            </p>
+            <p>{dateCheck()}</p>
 
-          <div className="comments">
-            <img src={commentsIcon} alt="comments" />
-            <span>{kFormatter(data.num_comments)}</span>
+            <div className="comments">
+              <img src={commentsIcon} alt="comments" />
+              <span>{kFormatter(data.num_comments)}</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

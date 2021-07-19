@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  transition-duration: 500ms !important;
+  height: 100%;
 }
 .Main {
   margin-top: 50px;
@@ -8,6 +10,32 @@
   flex-wrap: wrap;
 }
 .darkMode {
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(10, 10, 10);
+  color: white !important;
+  transition-duration: 500ms !important;
+}
+.darkMode .searchBar {
+  background-color: rgb(26, 26, 27);
+  color: white !important;
+}
+.darkMode .postBox {
+  background-color: rgb(26, 26, 27);
+  color: white !important;
+  transition-duration: 500ms !important;
+}
+.darkMode a {
+  color: rgb(54, 113, 151);
+}
+.darkMode h2 {
   color: white;
+  transition-duration: 500ms !important;
+}
+.darkMode .upvote,
+.downvote {
+  fill: gray;
+}
+.darkMode .forma input {
+  color: white;
+  background-color: rgb(37, 37, 37);
+  box-shadow: 0;
 }

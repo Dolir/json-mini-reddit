@@ -5,7 +5,7 @@ import { fetchPosts } from "../features/getdata/redditPostsSlice";
 import { toggle } from "../features/darkmode/darkmode";
 import { useDispatch } from "react-redux";
 import logo from "../imgs/reddit-logo.svg";
-import classNames from "classnames";
+import { Link } from "react-router-dom";
 function SearchBar() {
   const dispatch = useDispatch();
   const [text, setText] = React.useState();
@@ -20,23 +20,32 @@ function SearchBar() {
     console.log(jopa);
     setText("");
   }
+
   function toggleDarkMode(e) {
     dispatch(toggle(e.target.checked));
   }
+  function addPopUp(e) {
+    e.target.form.children.SearchInput.classList.add("clicked");
+    console.log(e.target.form.children.SearchInput.classList);
+  }
+
   return (
-    <div className=" header ">
+    <div className="header">
       <div className="searchBar">
-        <img src={logo} className="logo" alt="logo" />
+        <Link to="/posts" className="link">
+          <img src={logo} className="logo" alt="logo" />
+        </Link>
         <div>
           <form onSubmit={somefunc} className="forma">
             <input
+              id="SearchInput"
               placeholder="Search"
               onChange={(e) => setText(e.target.value)}
               value={text}
+              onClick={addPopUp}
             />
           </form>
         </div>
-
         <div className="toggle-button-cover">
           <div className="button r" id="button-3">
             <input
