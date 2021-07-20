@@ -68,7 +68,10 @@ function Post({ data }) {
   console.log(data);
   return (
     <Link
-      to={`/posts/${data.id}/${data.title.replace(/\s/g, "_")}`}
+      to={`/posts/${data.subreddit}/${data.id}/${data.title.replace(
+        /\s/g,
+        "_"
+      )}`}
       className="noFlexlink"
     >
       <div className="postBox">
@@ -77,7 +80,7 @@ function Post({ data }) {
           <p className="votes">{kFormatter(data.ups)}</p>
           <img src={logo} className="downvote" alt="downvote" />
         </div>
-        <div>
+        <div className="maintext">
           <div className="subreddit-box">
             <p className="subreddit">r/{data.subreddit}</p>
           </div>

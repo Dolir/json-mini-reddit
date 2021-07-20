@@ -5,7 +5,7 @@
   max-height: 500px;
 }
 .postBox h2 {
-  width: 500px;
+  width: 600px;
   text-align: start;
   margin-left: 5px;
   margin-top: 0;
@@ -21,10 +21,11 @@
   display: flex;
 }
 .postBox {
-  width: 570px;
+  width: inherit;
+  background-color: white;
   cursor: pointer;
   margin-top: 20px;
-  padding-right: 10px;
+
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -42,7 +43,9 @@
   background-color: black;
   max-height: 500px;
 }
-
+.maintext {
+  width: 100%;
+}
 .upvote {
   width: 20px;
   margin-top: 15px;
@@ -99,6 +102,7 @@
   color: gray;
 }
 .noFlexlink {
+  width: inherit;
   text-decoration: none;
   color: black;
 }

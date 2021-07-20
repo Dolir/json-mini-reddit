@@ -1,0 +1,48 @@
+.commentBox {
+  width: 95%;
+  cursor: pointer;
+  margin-top: 20px;
+
+  border-radius: 10px;
+  display: flex;
+}
+.commentBox p {
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  text-align: start;
+  margin-left: 5px;
+  margin-top: 0;
+}
+.replies {
+  margin-left: 30px;
+}
+.replies .commentLine {
+  border-color: rgb(192, 192, 192);
+}
+.replies .commentBox {
+}
+.commentBody {
+  width: 100%;
+  color: black;
+  margin-top: 20px;
+}
+.CommentsSection {
+  max-width: 1000px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: none;
+}
+.commentLine {
+  width: 100%;
+  border-left: rgb(27, 27, 27) solid 1px;
+  box-shadow: 0 0.6px 2.2px rgba(0, 0, 0, 0.022),
+    0 1.3px 5.3px rgba(0, 0, 0, 0.031), 0 2.5px 10px rgba(0, 0, 0, 0.037),
+    0 4.5px 17.9px rgba(0, 0, 0, 0.043), 0 8.4px 33.4px rgba(0, 0, 0, 0.051),
+    0 20px 80px rgba(0, 0, 0, 0.07);
+  color: WHITE;
+}
+.Blog {
+}

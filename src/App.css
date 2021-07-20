@@ -1,6 +1,11 @@
+html {
+  background-color: white;
+  height: 100%;
+}
+
 .App {
   text-align: center;
-  transition-duration: 500ms !important;
+
   height: 100%;
 }
 .Main {
@@ -9,27 +14,31 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.Main2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .darkMode {
-  background-color: rgb(10, 10, 10);
-  color: white !important;
-  transition-duration: 500ms !important;
-}
-.darkMode .searchBar {
-  background-color: rgb(26, 26, 27);
+  background-color: rgb(10, 10, 10) !important;
   color: white !important;
 }
+.darkMode .searchBar,
 .darkMode .postBox {
   background-color: rgb(26, 26, 27);
   color: white !important;
-  transition-duration: 500ms !important;
+}
+
+.darkMode .postBox:hover {
+  box-shadow: 0 0px 1px rgb(255, 255, 255);
 }
 .darkMode a {
   color: rgb(54, 113, 151);
 }
 .darkMode h2 {
   color: white;
-  transition-duration: 500ms !important;
 }
+
 .darkMode .upvote,
 .downvote {
   fill: gray;
@@ -38,4 +47,17 @@
   color: white;
   background-color: rgb(37, 37, 37);
   box-shadow: 0;
+}
+.darkMode .commentBox {
+  background-color: rgb(26, 26, 27);
+  color: white !important;
+}
+.darkMode .commentBody {
+  color: white;
+}
+.darkMode .CommentsSection {
+  background-color: rgb(26, 26, 27);
+}
+.darkMode .commentLine {
+  border-left: rgb(255, 255, 255) solid 1px;
 }

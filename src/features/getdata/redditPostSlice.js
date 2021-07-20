@@ -1,14 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  post: {},
+  post: [],
   status: "mounting",
 };
 export const fetchPost = createAsyncThunk(
-  "posts/fetchPost",
+  "post/fetchPost",
   async (postData) => {
-    const response = await fetch(`https://www.reddit.com${postData.permalink}`);
+    console.log(postData);
+    const response = await fetch(
+      `https://www.reddit.com/r/${postData.subreddit}/comments/${postData.id}.json`
+    );
     const data = response.json();
-    console.log(data);
     return data;
   }
 );
@@ -23,11 +25,10 @@ export const redditPostSlice = createSlice({
       })
       .addCase(fetchPost.fulfilled, (state, action) => {
         state.status = "idle";
-        state.posts = action.payload;
+        state.post = action.payload;
       });
   },
 });
 
 export const selectPost = (state) => state.post;
-export const selectStatus = (state) => state.status;
 export default redditPostSlice.reducer;

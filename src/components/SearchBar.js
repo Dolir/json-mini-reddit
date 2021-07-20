@@ -6,7 +6,11 @@ import { toggle } from "../features/darkmode/darkmode";
 import { useDispatch } from "react-redux";
 import logo from "../imgs/reddit-logo.svg";
 import { Link } from "react-router-dom";
+import { selectDarkMode } from "../features/darkmode/darkmode";
+import { useSelector } from "react-redux";
+import classNames from "classnames";
 function SearchBar() {
+  const darkmode = useSelector(selectDarkMode);
   const dispatch = useDispatch();
   const [text, setText] = React.useState();
   React.useEffect(() => {
@@ -30,7 +34,7 @@ function SearchBar() {
   }
 
   return (
-    <div className="header">
+    <div className={classNames("header", { darkMode: darkmode.darkmode })}>
       <div className="searchBar">
         <Link to="/posts" className="link">
           <img src={logo} className="logo" alt="logo" />

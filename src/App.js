@@ -10,19 +10,18 @@ import classNames from "classnames";
 import SinglePost from "./components/SinglePost";
 import "./App.css";
 function App() {
-  const darkmode = useSelector(selectDarkMode);
+  // {classNames("App", { darkMode: darkmode.darkmode })}
+  // const darkmode = useSelector(selectDarkMode);
   return (
     <Router>
-      <div className={classNames("App", { darkMode: darkmode.darkmode })}>
+      <div className="App">
         <SearchBar />
         <Switch>
-          <Route path="/posts/:id/:title">
+          <Route path="/posts/:subreddit/:id/:title">
             <SinglePost />
           </Route>
           <Route path="/posts">
-            <div className="Main ">
-              <Posts />
-            </div>
+            <Posts />
           </Route>
         </Switch>
       </div>
