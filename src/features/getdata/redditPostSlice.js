@@ -6,7 +6,6 @@ const initialState = {
 export const fetchPost = createAsyncThunk(
   "post/fetchPost",
   async (postData) => {
-    console.log(postData);
     const response = await fetch(
       `https://www.reddit.com/r/${postData.subreddit}/comments/${postData.id}.json`
     );

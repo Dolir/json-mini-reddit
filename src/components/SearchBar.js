@@ -35,7 +35,6 @@ function SearchBar() {
   }
   function addPopUp(e) {
     e.target.form.children.SearchInput.classList.add("clicked");
-    console.log(e.target.form.children.SearchInput.classList);
   }
 
   return (

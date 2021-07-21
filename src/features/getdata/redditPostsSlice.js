@@ -16,7 +16,6 @@ export const fetchPosts = createAsyncThunk(
     }
     const response = await fetch("https://www.reddit.com/r/popular.json");
     const data = response.json();
-    console.log(data);
     return data;
   }
 );

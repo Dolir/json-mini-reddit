@@ -18,7 +18,7 @@ function SinglePost() {
   React.useEffect(() => {
     const result = fetchPost(postData);
     dispatch(result);
-    console.log(post);
+
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }, []);
@@ -36,7 +36,6 @@ function SinglePost() {
       ) : (
         <div className={classNames("Main2", { darkMode: darkmode.darkmode })}>
           <div className="Blog">
-            {console.log(post.post)}
             <Post data={post.post[0].data.children[0].data} goBack={true} />
             <Comments comments={post.post[1].data.children} />
           </div>
