@@ -4,8 +4,12 @@ function Comments({ comments }) {
   if (!comments) {
     return <div></div>;
   }
-  if (comments[0].kind === "more") {
+  if (comments[0] === undefined) {
     return <div></div>;
+  } else {
+    if (comments[0].kind === "more") {
+      return <div></div>;
+    }
   }
 
   return (

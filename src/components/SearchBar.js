@@ -5,7 +5,7 @@ import { fetchPosts } from "../features/getdata/redditPostsSlice";
 import { toggle } from "../features/darkmode/darkmode";
 import { useDispatch } from "react-redux";
 import logo from "../imgs/reddit-logo.svg";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { selectDarkMode } from "../features/darkmode/darkmode";
 import { useSelector } from "react-redux";
 import classNames from "classnames";
@@ -23,6 +23,7 @@ function SearchBar() {
     const jopa = fetchPosts(text);
     dispatch(jopa);
     setText("");
+    <Redirect to="/posts" />;
   }
   function fetchPopular() {
     const jopa = fetchPosts();

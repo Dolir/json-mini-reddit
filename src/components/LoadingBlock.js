@@ -7,7 +7,7 @@ function LoadingBlock({ messageType }) {
 
   if (messageType) {
     return (
-      <div className="postBox">
+      <div className="loadBox">
         <ContentLoader
           className="contentLoader"
           speed={2}
@@ -44,9 +44,9 @@ function LoadingBlock({ messageType }) {
     );
   }
   return (
-    <div className="postBox">
+    <div className="loadBox">
       <ContentLoader
-        className="contentLoader"
+        className="contentLoader2"
         speed={2}
         width={1000}
         height={500}

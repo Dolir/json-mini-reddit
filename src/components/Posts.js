@@ -14,7 +14,7 @@ function Posts() {
     <div className={classNames("Main", { darkMode: darkmode.darkmode })}>
       <div className="mainPosts">
         {posts.status !== "idle" ? (
-          <div>
+          <div className="loaders">
             <LoadingBlock messageType={true} />
             <LoadingBlock />
             <LoadingBlock messageType={true} />
