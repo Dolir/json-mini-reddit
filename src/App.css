@@ -24,7 +24,8 @@ html {
   color: white !important;
 }
 .darkMode .searchBar,
-.darkMode .postBox {
+.darkMode .postBox,
+.darkMode .loadBox {
   background-color: rgb(26, 26, 27);
   color: white !important;
 }
