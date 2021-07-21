@@ -11,7 +11,7 @@ export const fetchPosts = createAsyncThunk(
         `https://www.reddit.com/search.json?q=${searchTerm}`
       );
       const data = response.json();
-      console.log(data);
+
       return data;
     }
     const response = await fetch("https://www.reddit.com/r/popular.json");

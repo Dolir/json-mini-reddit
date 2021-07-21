@@ -19,13 +19,15 @@ function SinglePost() {
     const result = fetchPost(postData);
     dispatch(result);
     console.log(post);
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }, []);
+
   return (
     <div className={classNames("Main", { darkMode: darkmode.darkmode })}>
       {post.status !== "idle" ? (
-        <div>
+        <div className="Blog">
           <LoadingBlock />
-
           <LoadingBlock messageType={true} />
           <LoadingBlock messageType={true} />
           <LoadingBlock messageType={true} />
@@ -34,7 +36,8 @@ function SinglePost() {
       ) : (
         <div className={classNames("Main2", { darkMode: darkmode.darkmode })}>
           <div className="Blog">
-            <Post data={post.post[0].data.children[0].data} />
+            {console.log(post.post)}
+            <Post data={post.post[0].data.children[0].data} goBack={true} />
             <Comments comments={post.post[1].data.children} />
           </div>
         </div>

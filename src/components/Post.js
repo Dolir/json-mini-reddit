@@ -3,8 +3,8 @@ import "../styles/post.css";
 import logo from "../imgs/arrowUp.svg";
 import commentsIcon from "../imgs/commentsIcon.png";
 import classNames from "classnames";
-import { useParams, Link, Redirect } from "react-router-dom";
-function Post({ data }) {
+import { Link } from "react-router-dom";
+function Post({ data, goBack }) {
   function kFormatter(num) {
     return Math.abs(num) > 999
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
@@ -24,7 +24,7 @@ function Post({ data }) {
     } else if (data.media === Object) {
       return data.media.embed;
     } else {
-      const imageFormats = ["jpg", "png"];
+      const imageFormats = ["jpg", "png", "gif"];
       const result = imageFormats.some((el) => data.url.includes(el));
       if (!result) {
         return (
@@ -56,7 +56,7 @@ function Post({ data }) {
     const diff = secondsSinceEpoch - createdDate;
 
     if (diff < 86400) {
-      return `${Math.floor(diff / 60 / 60)} hours ago`;
+      return `${Math.floor(diff / 60 / 60)}h`;
     } else {
       return `${justDate.toLocaleString(undefined, {
         year: "numeric",
@@ -65,13 +65,12 @@ function Post({ data }) {
       })}`;
     }
   }
-  console.log(data);
+
   return (
     <Link
-      to={`/posts/${data.subreddit}/${data.id}/${data.title.replace(
-        /\s/g,
-        "_"
-      )}`}
+      to={`/posts/${data.subreddit}/${data.id}/${data.title
+        .replace(/\s/g, "_")
+        .replace(/[^\w\s]/gi, "")}`}
       className="noFlexlink"
     >
       <div className="postBox">
@@ -89,7 +88,7 @@ function Post({ data }) {
           {MediaPicker()}
           <div className="bottom-main">
             <p>
-              Posted by <span>{data.author}</span>
+              By <span>{data.author}</span>
             </p>
             <p>{dateCheck()}</p>
 

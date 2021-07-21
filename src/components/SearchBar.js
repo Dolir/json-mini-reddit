@@ -13,16 +13,20 @@ function SearchBar() {
   const darkmode = useSelector(selectDarkMode);
   const dispatch = useDispatch();
   const [text, setText] = React.useState();
+
   React.useEffect(() => {
     const jopa = fetchPosts();
     dispatch(jopa);
   }, []);
-  function somefunc(e) {
+  function onSubmit(e) {
     e.preventDefault();
     const jopa = fetchPosts(text);
     dispatch(jopa);
-    console.log(jopa);
     setText("");
+  }
+  function fetchPopular() {
+    const jopa = fetchPosts();
+    dispatch(jopa);
   }
 
   function toggleDarkMode(e) {
@@ -37,10 +41,10 @@ function SearchBar() {
     <div className={classNames("header", { darkMode: darkmode.darkmode })}>
       <div className="searchBar">
         <Link to="/posts" className="link">
-          <img src={logo} className="logo" alt="logo" />
+          <img src={logo} className="logo" alt="logo" onClick={fetchPopular} />
         </Link>
         <div>
-          <form onSubmit={somefunc} className="forma">
+          <form onSubmit={onSubmit} className="forma">
             <input
               id="SearchInput"
               placeholder="Search"
@@ -61,7 +65,6 @@ function SearchBar() {
             <div className="layer"></div>
           </div>
         </div>
-
         <span className="darkModeSign">Dark Mode</span>
       </div>
     </div>

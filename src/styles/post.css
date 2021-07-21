@@ -1,11 +1,9 @@
 .postImage {
-  max-width: 500px;
   border-radius: 10px;
   padding-bottom: 10px;
   max-height: 500px;
 }
 .postBox h2 {
-  width: 600px;
   text-align: start;
   margin-left: 5px;
   margin-top: 0;
@@ -21,7 +19,6 @@
   display: flex;
 }
 .postBox {
-  width: inherit;
   background-color: white;
   cursor: pointer;
   margin-top: 20px;
@@ -41,6 +38,9 @@
 .postVideo {
   border-radius: 10px;
   background-color: black;
+  max-width: 1000px;
+  width: min-content;
+  margin-right: 50px;
   max-height: 500px;
 }
 .maintext {
@@ -102,7 +102,84 @@
   color: gray;
 }
 .noFlexlink {
-  width: inherit;
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
   text-decoration: none;
   color: black;
+}
+.mainPosts {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.loaders {
+  width: 100%;
+}
+@media only screen and (max-width: 1000px) {
+  .contentLoader {
+    transform: translateY(-25px);
+  }
+  #rect23 {
+    transform: translateY(-70px);
+    height: 600px;
+  }
+  #rect2 {
+    height: 300px;
+  }
+  #rect3 {
+    transform: translateY(70px);
+  }
+  .comments {
+    margin-top: 10px;
+  }
+  .mainPosts {
+    width: 600px;
+  }
+  .postVideo {
+    width: 400px;
+  }
+  .postImage {
+    width: 500px;
+  }
+  .bottom-main {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 637px) {
+  .contentLoader {
+    transform: translateY(-50px);
+  }
+  #rect23 {
+    transform: translateY(-140px);
+    height: 600px;
+  }
+  #rect2 {
+    height: 500px;
+  }
+  #rect3 {
+    transform: translateY(70px);
+  }
+  .mainPosts {
+    width: 400px;
+  }
+  .postVideo {
+    width: 200px;
+  }
+  .postImage {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 447px) {
+  .mainPosts {
+    width: 300px;
+  }
+  .mainPosts h2 {
+    font-size: 20px;
+  }
+  .postVideo {
+    width: 100px;
+  }
+  .postImage {
+    width: 230px;
+  }
 }

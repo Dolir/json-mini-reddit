@@ -13,7 +13,7 @@ function Comment({ comment }) {
     const diff = secondsSinceEpoch - createdDate;
 
     if (diff < 86400) {
-      return `${Math.floor(diff / 60 / 60)} hours ago`;
+      return `${Math.floor(diff / 60 / 60)}h`;
     } else {
       return `${justDate.toLocaleString(undefined, {
         year: "numeric",
@@ -27,7 +27,7 @@ function Comment({ comment }) {
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
       : Math.sign(num) * Math.abs(num);
   }
-  console.log(comment);
+
   return (
     <div className="commentLine">
       <div className="commentBox">

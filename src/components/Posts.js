@@ -5,14 +5,14 @@ import { selectPosts } from "../features/getdata/redditPostsSlice";
 import LoadingBlock from "./LoadingBlock";
 import { selectDarkMode } from "../features/darkmode/darkmode";
 import classNames from "classnames";
+
 function Posts() {
   const posts = useSelector(selectPosts);
   const darkmode = useSelector(selectDarkMode);
-  console.log(posts);
 
   return (
     <div className={classNames("Main", { darkMode: darkmode.darkmode })}>
-      <div>
+      <div className="mainPosts">
         {posts.status !== "idle" ? (
           <div>
             <LoadingBlock messageType={true} />

@@ -1,6 +1,5 @@
 .commentBox {
   width: 95%;
-  cursor: pointer;
   margin-top: 20px;
 
   border-radius: 10px;
@@ -38,11 +37,25 @@
 .commentLine {
   width: 100%;
   border-left: rgb(27, 27, 27) solid 1px;
-  box-shadow: 0 0.6px 2.2px rgba(0, 0, 0, 0.022),
-    0 1.3px 5.3px rgba(0, 0, 0, 0.031), 0 2.5px 10px rgba(0, 0, 0, 0.037),
-    0 4.5px 17.9px rgba(0, 0, 0, 0.043), 0 8.4px 33.4px rgba(0, 0, 0, 0.051),
-    0 20px 80px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 -4px 0px rgba(0, 0, 0, 1);
   color: WHITE;
 }
 .Blog {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+@media only screen and (max-width: 1000px) {
+  .Blog {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 637px) {
+  .Blog {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 447px) {
+  .Blog {
+    width: 300px;
+  }
 }
