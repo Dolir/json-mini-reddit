@@ -23,7 +23,7 @@ function SearchBar() {
     const jopa = fetchPosts(text);
     dispatch(jopa);
     setText("");
-    <Redirect to="/posts" />;
+    <Redirect to="/" />;
   }
   function fetchPopular() {
     const jopa = fetchPosts();
@@ -41,7 +41,7 @@ function SearchBar() {
   return (
     <div className={classNames("header", { darkMode: darkmode.darkmode })}>
       <div className="searchBar">
-        <Link to="/posts" className="link">
+        <Link to="/" className="link">
           <img src={logo} className="logo" alt="logo" onClick={fetchPopular} />
         </Link>
         <div>
