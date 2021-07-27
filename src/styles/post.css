@@ -52,7 +52,7 @@
 .postVideo {
   border-radius: 10px;
   background-color: black;
-  max-width: 1000px;
+  max-width: 900px;
   width: min-content;
   margin-right: 50px;
   max-height: 500px;
@@ -130,8 +130,12 @@
   width: 100%;
 }
 @media only screen and (max-width: 1000px) {
-  .contentLoader {
+  .contentLoader,
+  .contentLoader2 {
+    visibility: hidden;
     transform: translateY(-25px);
+  }
+  .loaders {
   }
   #rect23 {
     transform: translateY(-70px);
@@ -177,7 +181,8 @@
     width: 400px;
   }
   .postVideo {
-    width: 200px;
+    height: 300px;
+    width: 250px;
   }
   .postImage {
     width: 300px;
@@ -191,7 +196,7 @@
     font-size: 20px;
   }
   .postVideo {
-    width: 100px;
+    height: 300px;
   }
   .postImage {
     width: 230px;

@@ -13,7 +13,7 @@ function App() {
           <Route path="/posts/:subreddit/:id/:title">
             <SinglePost />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Posts />
           </Route>
         </Switch>

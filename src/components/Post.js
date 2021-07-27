@@ -4,7 +4,7 @@ import logo from "../imgs/arrowUp.svg";
 import commentsIcon from "../imgs/commentsIcon.png";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-function Post({ data, goBack }) {
+function Post({ data }) {
   function kFormatter(num) {
     return Math.abs(num) > 999
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"

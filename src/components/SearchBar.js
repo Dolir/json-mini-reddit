@@ -13,7 +13,7 @@ function SearchBar() {
   const darkmode = useSelector(selectDarkMode);
   const dispatch = useDispatch();
   const [text, setText] = React.useState();
-
+  const [submitted, setSubmitted] = React.useState(false);
   React.useEffect(() => {
     const jopa = fetchPosts();
     dispatch(jopa);
@@ -23,7 +23,7 @@ function SearchBar() {
     const jopa = fetchPosts(text);
     dispatch(jopa);
     setText("");
-    <Redirect to="/" />;
+    setSubmitted(true);
   }
   function fetchPopular() {
     const jopa = fetchPosts();
@@ -36,9 +36,13 @@ function SearchBar() {
   function addPopUp(e) {
     e.target.form.children.SearchInput.classList.add("clicked");
   }
-
+  function handleChange(e) {
+    setText(e.target.value);
+    setSubmitted(false);
+  }
   return (
     <div className={classNames("header", { darkMode: darkmode.darkmode })}>
+      {submitted ? <Redirect push to="/" /> : ""}
       <div className="searchBar">
         <Link to="/" className="link">
           <img src={logo} className="logo" alt="logo" onClick={fetchPopular} />
@@ -48,7 +52,7 @@ function SearchBar() {
             <input
               id="SearchInput"
               placeholder="Search"
-              onChange={(e) => setText(e.target.value)}
+              onChange={handleChange}
               value={text}
               onClick={addPopUp}
             />
