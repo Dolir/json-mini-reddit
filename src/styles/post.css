@@ -189,6 +189,9 @@
   }
 }
 @media only screen and (max-width: 447px) {
+  .clicked {
+    width: 100px !important;
+  }
   .mainPosts {
     width: 300px;
   }
@@ -196,6 +199,8 @@
     font-size: 20px;
   }
   .postVideo {
+    margin-right: 10px;
+    width: 200px;
     height: 300px;
   }
   .postImage {

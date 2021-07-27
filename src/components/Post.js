@@ -31,7 +31,7 @@ function Post({ data }) {
           <a href={data.url} className="sourceLink">
             {data.url
               .toString()
-              .slice(0, 40)
+              .slice(0, 35)
               .replace(/(^\w+:|^)\/\//, "")}
           </a>
         );
